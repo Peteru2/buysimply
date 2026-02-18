@@ -70,18 +70,26 @@
           <label class="block text-sm text-[#3E3E3E] font-medium mb-1">
             Password <span class="text-red-500">*</span>
           </label>
-          <div class="w-full flex border border-[#C6C6C6] rounded-lg  focus:outline-none focus:ring-2 focus:ring-[#61227D]">
-          <input
-            type="password"
-            v-model="password"
-            placeholder="Enter your password"
-            class="w-full px-3 py-2 border-0 outline-none"
-          />
-          <div class="ml-auto border-l border-l-[#C6C6C6] bg-gray-100
-  w-10 justify-center rounded-tr-lg rounded-br-lg items-center flex">
-          e
-          </div>
-          </div>
+          <div class="w-full flex border border-[#C6C6C6] rounded-lg focus-within:ring-2 focus-within:ring-[#61227D]">
+
+  <input
+    :type="showPassword ? 'text' : 'password'"
+    v-model="password"
+    placeholder="Enter your password"
+    class="w-full px-3 py-2 border-0 outline-none rounded-l-lg"
+  />
+
+  <button
+    type="button"
+    @click="togglePassword"
+    class="w-14 flex items-center cursor-pointer  justify-center border-l border-[#C6C6C6] bg-gray-100 rounded-tr-lg rounded-br-lg"
+  >
+    <Eye v-if="showPassword" class="text-gray-500"  :size="20" />
+    <EyeOff v-else class="text-gray-500"  :size="20" />
+  </button>
+
+</div>
+
         </div>
 
         <!-- Remember + Forgot -->
@@ -99,7 +107,7 @@
         <!-- Button -->
         <button
           @click="login"
-          class="w-full bg-[#61227D] text-white py-2 rounded-lg hover:opacity-90 transition"
+          class="w-full bg-[#61227D] text-white py-2 cursor-pointer rounded-lg hover:opacity-90 transition"
         >
           Sign in
         </button>
@@ -122,11 +130,16 @@
 
 <script setup>
 import { ref } from "vue"
+import { Eye, EyeOff } from 'lucide-vue-next';
 
 const email = ref("")
 const password = ref("")
 const remember = ref(false)
+const showPassword = ref(false)
 
+const togglePassword = () => {
+  showPassword.value = !showPassword.value
+}
 const login = () => {
   if (!email.value || !password.value) {
     alert("Please fill in all fields")
