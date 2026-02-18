@@ -21,18 +21,19 @@
         class="rounded-xl shadow-lg"
       />
 
-      <h2 class="text-[#61227D] text-center font-semibold text-lg my-2">
+      <h2 class="text-[#61227D] lora text-center font-semibold text-lg my-2">
         Team Achieve
       </h2>
 
-      <p class="text-gray-600 text-center">
+      <p class="text-gray-600 lora text-center">
         Your perfect solution for funding your desires
       </p>
     </div>
 
 
     <!-- RIGHT SECTION -->
-    <div class="w-full md:w-1/2 flex items-center justify-center px-4">
+    <div class="w-full md:w-1/2 bg-[#FCFCFC]
+ flex items-center justify-center px-4">
 
       <div class="w-full    md:px-10 px-2 ">
  <div class="flex md:hidden justify-center  items-center ">
@@ -43,16 +44,16 @@
         />
        
       </div>
-        <h2 class="text-2xl text-center md:text-left font-bold text-[#61227D] mb-2">
+        <h2 class="text-2xl text-center lora font-bold text-[#61227D] mb-2">
           Welcome Back
         </h2>
 
-        <p class="text-gray-500 text-center md:text-left mb-6 text-sm">
+        <p class="text-gray-500 noto-sans text-center mb-6 text-sm">
           Enter your email address and password to access your account.
         </p>
 
         <!-- Email -->
-        <div class="mb-4">
+        <div class="mb-4 noto-sans">
           <label class="block text-sm text-[#3E3E3E]
  font-medium mb-1">
             Email Address <span class="text-red-500">*</span>
@@ -61,7 +62,7 @@
             type="email"
             v-model="email"
             placeholder="Enter your email"
-            class="w-full border border-[#C6C6C6] rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#61227D]"
+            class="w-full border border-[#C6C6C6] bg-[#FFFFFF] rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#61227D]"
           />
         </div>
 
@@ -76,7 +77,7 @@
     :type="showPassword ? 'text' : 'password'"
     v-model="password"
     placeholder="Enter your password"
-    class="w-full px-3 py-2 border-0 outline-none rounded-l-lg"
+    class="w-full px-3 py-2 border-0 bg-[#FFFFFF] outline-none rounded-l-lg"
   />
 
   <button
